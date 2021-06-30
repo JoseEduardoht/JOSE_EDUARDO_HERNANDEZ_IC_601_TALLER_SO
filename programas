@@ -1,0 +1,59 @@
+programa 1
+#include <stdio.h>
+int main (){
+int ArrayInt[5]; //declaramos el array con 5 
+//inicializamos el array con una estructura repetitiva
+for (int i=0; i<5; i++)
+{
+  ArrayInt[i] = i;
+}
+
+int *punteroInt= ArrayInt;   // creamos un puntero int  y lo inicializamos el puntero con ArrayInt
+int *punteroIntDos= &ArrayInt[0];    //creamos otro puntero y lo  inicializamos el puntero con ArrayInt con el primer elemento del array
+
+printf ("El valor de ArrayInt[0] es: %d\n" ,  ArrayInt[0]);          //imprimimos el contenido del primer elemento
+printf("El valor de punteroInt es: %i\n", punteroInt);  //imprimimos el contenido del puntero Int
+printf("El valor del punteroIntDos es: %i\n", punteroIntDos);  //imprimimos el contenido del puntero IntDos
+printf("El valor de ArrayInt[4] = %d\n",  ArrayInt[4]);          //imprimimos el contenido del primer elemento 5 del array
+printf("El valor del punteroIntDos es: %d\n", punteroInt+4); //imprimimos el valor del 5to elemento del puntero Int con aritmÃ¨tica de punteros
+printf("El valor del punteroIntDos es: %d\n", punteroIntDos+4); //imprimimos el valor del 5to elemento del puntero IntDos con aritmÃ¨tica de punteros
+
+//imprimimos el contenido de todos los elementos del puntero Int
+for (int i=0; i<5; i++)
+{
+  *punteroInt++;
+  printf("El contenido de punteroInt [i]: %i\n", i,punteroInt);
+}
+
+//imprimimos el contenido de todos los elementos del puntero IntDos
+for (int i=0; i<5; i++)
+{
+  *punteroIntDos++;
+  printf("El contenido de punteroIntDos [i]: %i\n",i, punteroIntDos);
+}
+
+}
+
+---------------------------------------------------------------------------------
+programa 2
+#include <stdio.h>
+#include <stdlib.h> 
+int main (){
+int x;            //Defiminos la variable x
+int *p;           //creamos un puntero
+int y;            //Definimos la variable y
+int *puntero;     //Creamos el puntero
+
+
+x=10;            //inicializamos a x con valor a 10
+p= &x;           //Asignar la direccion de memoria de x al puntero p
+//imprimir el contenido del puntero p
+printf("El contenido de P es: %i\n" , *p);
+p = p+1; //sumar 1 al contenido del puntero p y almacenarlo en el mismo punte>
+printf("El contenido de P es: %i\n", *p); //imprimir el contenido de puntero p
+p= p+2; //sumar 2 al contenido del puntero p
+
+y=20;  //inicializamos a y con 20
+p=&y;  //Asignamos la direccion de memoria de y a p
+printf("El contenido de P es: %i\n", *p); //imprimimos el contenido de p
+}
